@@ -1,0 +1,468 @@
+Archive member included because of file (symbol)
+
+c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+                              rel\startup.o (__libc_init_array)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ROM              0x00100000         0x00010000         xr
+RAM              0x00200000         0x00004000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+LOAD c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+LOAD rel\startup.o
+LOAD rel\arm_exc.o
+LOAD rel\low_level_init.o
+LOAD rel\bsp.o
+LOAD rel\isr.o
+LOAD rel\blinky.o
+LOAD c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libm.a
+START GROUP
+LOAD c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0\libgcc.a
+LOAD c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a
+END GROUP
+LOAD c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+LOAD c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+                0x00000200                C_STACK_SIZE = 0x200
+                0x00000000                IRQ_STACK_SIZE = 0x0
+                0x00000000                FIQ_STACK_SIZE = 0x0
+                0x00000000                SVC_STACK_SIZE = 0x0
+                0x00000000                ABT_STACK_SIZE = 0x0
+                0x00000000                UND_STACK_SIZE = 0x0
+
+.reset          0x00100000      0x180
+ *startup.o(.text)
+ .text          0x00100000      0x180 rel\startup.o
+                0x00100000                _start
+                0x00100180                . = ALIGN (0x4)
+
+.ramvect        0x00200000       0x40
+                0x00200000                __ram_start = .
+                0x00200040                . = 0x40
+ *fill*         0x00200000       0x40 00
+
+.fastcode       0x00200040      0x324 load address 0x00100180
+                0x00100180                __fastcode_load = LOADADDR (.fastcode)
+                0x00200040                __fastcode_start = .
+ *(.glue_7t)
+ .glue_7t       0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+ .glue_7t       0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+ .glue_7t       0x00200040        0x0 rel\startup.o
+ .glue_7t       0x00200040        0x0 rel\arm_exc.o
+ .glue_7t       0x00200040        0x0 rel\low_level_init.o
+ .glue_7t       0x00200040        0x0 rel\bsp.o
+ .glue_7t       0x00200040        0x0 rel\isr.o
+ .glue_7t       0x00200040        0x0 rel\blinky.o
+ .glue_7t       0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+ .glue_7t       0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+ .glue_7t       0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+ *(.glue_7)
+ .glue_7        0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+ .glue_7        0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+ .glue_7        0x00200040        0x0 rel\startup.o
+ .glue_7        0x00200040        0x0 rel\arm_exc.o
+ .glue_7        0x00200040        0x0 rel\low_level_init.o
+ .glue_7        0x00200040        0x0 rel\bsp.o
+ .glue_7        0x00200040        0x0 rel\isr.o
+ .glue_7        0x00200040        0x0 rel\blinky.o
+ .glue_7        0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+ .glue_7        0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+ .glue_7        0x00200040        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+ *isr.o(.text.*)
+ .text.eventFlagSet
+                0x00200040       0x28 rel\isr.o
+                0x00200040                eventFlagSet
+ .text.eventFlagCheck
+                0x00200068       0x48 rel\isr.o
+                0x00200068                eventFlagCheck
+ .text.ISR_pit  0x002000b0       0x38 rel\isr.o
+                0x002000b0                ISR_pit
+ .text.ISR_timer0
+                0x002000e8       0x38 rel\isr.o
+                0x002000e8                ISR_timer0
+ .text.ISR_spur
+                0x00200120        0x4 rel\isr.o
+                0x00200120                ISR_spur
+ .text.fastcode
+                0x00200124       0x6c rel\isr.o
+                0x00200158                BSP_fiq
+                0x00200124                BSP_irq
+ *(.text.fastcode)
+ .text.fastcode
+                0x00200190      0x180 rel\arm_exc.o
+                0x002002a0                ARM_except
+                0x00200280                ARM_swi
+                0x0020019c                ARM_int_unlock_SYS
+                0x00200278                ARM_undef
+                0x002001a4                ARM_irq
+                0x00200270                ARM_reset
+                0x00200288                ARM_pAbort
+                0x00200298                ARM_reserved
+                0x00200190                ARM_int_lock_SYS
+                0x0020020c                ARM_fiq
+                0x00200290                ARM_dAbort
+ *(.text.Blinky_dispatch)
+ .text.Blinky_dispatch
+                0x00200310       0x54 rel\blinky.o
+                0x00200310                Blinky_dispatch
+                0x00200364                . = ALIGN (0x4)
+                0x00200364                __fastcode_end = .
+
+.text           0x001004a4      0x59c
+ CREATE_OBJECT_SYMBOLS
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x001004a4        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+ .text          0x001004a4       0xa4 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+ .text          0x00100548        0x0 rel\arm_exc.o
+ .text          0x00100548        0x0 rel\low_level_init.o
+ .text.low_level_init
+                0x00100548      0x13c rel\low_level_init.o
+                0x00100548                low_level_init
+ .text          0x00100684        0x0 rel\bsp.o
+ .text.AT91F_TC_open
+                0x00100684       0x30 rel\bsp.o
+ .text.BSP_abort
+                0x001006b4        0x4 rel\bsp.o
+                0x001006b4                BSP_abort
+ .text.BSP_init
+                0x001006b8      0x180 rel\bsp.o
+                0x001006b8                BSP_init
+ .text          0x00100838        0x0 rel\isr.o
+ .text          0x00100838        0x0 rel\blinky.o
+ .text.Blinky_ctor
+                0x00100838       0x24 rel\blinky.o
+                0x00100838                Blinky_ctor
+ .text.main     0x0010085c       0xc8 rel\blinky.o
+                0x0010085c                main
+ .text          0x00100924       0xd0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+                0x00100974                __libc_init_array
+                0x00100924                __libc_fini_array
+ .text          0x001009f4        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+ .text          0x001009f4        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ *(.glue_7)
+                0x001009f4                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x001009f4       0x10 rel\bsp.o
+                0x001009f4                BSP_led
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+ *(.eh_frame_hdr)
+ *(.eh_frame)
+ .eh_frame      0x00100a04        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+ .eh_frame      0x00100a04        0x4 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+ *(.init)
+ .init          0x00100a08        0xc c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+                0x00100a08                _init
+ .init          0x00100a14        0xc c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+ *(.fini)
+ .fini          0x00100a20        0xc c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+                0x00100a20                _fini
+ .fini          0x00100a2c        0xc c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+                0x00100a38                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x00100a38                PROVIDE (__preinit_array_end, .)
+                0x00100a38                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x00100a38        0x4 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+                0x00100a3c                PROVIDE (__init_array_end, .)
+                0x00100a3c                PROVIDE (__fini_array_start, .)
+ *(.fini_array)
+ .fini_array    0x00100a3c        0x4 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x00100a40                PROVIDE (__fini_array_end, .)
+
+.vfp11_veneer   0x00100a40        0x0
+ .vfp11_veneer  0x00100a40        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+ .vfp11_veneer  0x00100a40        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+ .vfp11_veneer  0x00100a40        0x0 rel\startup.o
+ .vfp11_veneer  0x00100a40        0x0 rel\arm_exc.o
+ .vfp11_veneer  0x00100a40        0x0 rel\low_level_init.o
+ .vfp11_veneer  0x00100a40        0x0 rel\bsp.o
+ .vfp11_veneer  0x00100a40        0x0 rel\isr.o
+ .vfp11_veneer  0x00100a40        0x0 rel\blinky.o
+ .vfp11_veneer  0x00100a40        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+ .vfp11_veneer  0x00100a40        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+ .vfp11_veneer  0x00100a40        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+
+.ARM.exidx      0x00100a40        0x0
+                0x00100a40                __exidx_start = .
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00100a40                __exidx_end = .
+                0x00100a40                _etext = .
+
+.data           0x00200364        0x8 load address 0x00100a40
+                0x00100a40                __data_load = LOADADDR (.data)
+                0x00200364                __data_start = .
+ *(.jcr)
+ .jcr           0x00200364        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+ .jcr           0x00200364        0x4 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00200368        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+ .data          0x00200368        0x4 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+                0x00200368                __dso_handle
+ .data          0x0020036c        0x0 rel\startup.o
+ .data          0x0020036c        0x0 rel\arm_exc.o
+ .data          0x0020036c        0x0 rel\low_level_init.o
+ .data          0x0020036c        0x0 rel\bsp.o
+ .data          0x0020036c        0x0 rel\isr.o
+ .data          0x0020036c        0x0 rel\blinky.o
+ .data          0x0020036c        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+ .data          0x0020036c        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+ .data          0x0020036c        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+                0x0020036c                . = ALIGN (0x4)
+                0x0020036c                _edata = .
+
+.bss            0x0020036c       0x64
+                0x0020036c                __bss_start__ = .
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0020036c        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+ .bss           0x0020036c       0x1c c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+ .bss           0x00200388        0x0 rel\startup.o
+ .bss           0x00200388        0x0 rel\arm_exc.o
+ .bss           0x00200388        0x0 rel\low_level_init.o
+ .bss           0x00200388        0x0 rel\bsp.o
+ .bss           0x00200388        0x4 rel\isr.o
+ .bss           0x0020038c       0x40 rel\blinky.o
+ .bss           0x002003cc        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+ .bss           0x002003cc        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+ .bss           0x002003cc        0x0 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+ *(COMMON)
+                0x002003d0                . = ALIGN (0x8)
+ *fill*         0x002003cc        0x4 00
+                0x002003d0                __bss_end__ = .
+
+.stack          0x002003d0      0x200
+                0x002003d0                __stack_start__ = .
+                0x002003d0                . = (. + IRQ_STACK_SIZE)
+                0x002003d0                . = ALIGN (0x4)
+                0x002003d0                __irq_stack_top__ = .
+                0x002003d0                . = (. + FIQ_STACK_SIZE)
+                0x002003d0                . = ALIGN (0x4)
+                0x002003d0                __fiq_stack_top__ = .
+                0x002003d0                . = (. + SVC_STACK_SIZE)
+                0x002003d0                . = ALIGN (0x4)
+                0x002003d0                __svc_stack_top__ = .
+                0x002003d0                . = (. + ABT_STACK_SIZE)
+                0x002003d0                . = ALIGN (0x4)
+                0x002003d0                __abt_stack_top__ = .
+                0x002003d0                . = (. + UND_STACK_SIZE)
+                0x002003d0                . = ALIGN (0x4)
+                0x002003d0                __und_stack_top__ = .
+                0x002005d0                . = (. + C_STACK_SIZE)
+ *fill*         0x002003d0      0x200 00
+                0x002005d0                . = ALIGN (0x4)
+                0x002005d0                __c_stack_top__ = .
+                0x002005d0                __stack_end__ = .
+                0x002005d0                _end = .
+                0x002005d0                __end = .
+                0x002005d0                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x40
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 rel\startup.o
+ .debug_aranges
+                0x00000020       0x20 rel\arm_exc.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000       0xaa
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000       0x55 rel\startup.o
+ .debug_info    0x00000055       0x55 rel\arm_exc.o
+
+.debug_abbrev   0x00000000       0x28
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x14 rel\startup.o
+ .debug_abbrev  0x00000014       0x14 rel\arm_exc.o
+
+.debug_line     0x00000000      0x112
+ *(.debug_line)
+ .debug_line    0x00000000       0x7a rel\startup.o
+ .debug_line    0x0000007a       0x98 rel\arm_exc.o
+
+.debug_frame    0x00000000       0x48
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x48 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x10
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x14 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+ .ARM.attributes
+                0x00000014       0x2e c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+ .ARM.attributes
+                0x00000042       0x1e rel\startup.o
+ .ARM.attributes
+                0x00000060       0x1e rel\arm_exc.o
+ .ARM.attributes
+                0x0000007e       0x2e rel\low_level_init.o
+ .ARM.attributes
+                0x000000ac       0x2e rel\bsp.o
+ .ARM.attributes
+                0x000000da       0x2e rel\isr.o
+ .ARM.attributes
+                0x00000108       0x2e rel\blinky.o
+ .ARM.attributes
+                0x00000136       0x2e c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000164       0x2c c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtend.o
+ .ARM.attributes
+                0x00000190       0x14 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(rel\blinky.elf elf32-littlearm)
+
+.comment        0x00000000      0x134
+ .comment       0x00000000       0x4d rel\low_level_init.o
+ .comment       0x0000004d       0x4d rel\bsp.o
+ .comment       0x0000009a       0x4d rel\isr.o
+ .comment       0x000000e7       0x4d rel\blinky.o
+
+Cross Reference Table
+
+Symbol                                            File
+ARM_dAbort                                        rel\arm_exc.o
+                                                  rel\bsp.o
+ARM_except                                        rel\arm_exc.o
+ARM_fiq                                           rel\arm_exc.o
+                                                  rel\bsp.o
+ARM_int_lock_SYS                                  rel\arm_exc.o
+ARM_int_unlock_SYS                                rel\arm_exc.o
+                                                  rel\bsp.o
+ARM_irq                                           rel\arm_exc.o
+                                                  rel\bsp.o
+ARM_pAbort                                        rel\arm_exc.o
+                                                  rel\bsp.o
+ARM_reserved                                      rel\arm_exc.o
+                                                  rel\bsp.o
+ARM_reset                                         rel\arm_exc.o
+ARM_swi                                           rel\arm_exc.o
+                                                  rel\bsp.o
+ARM_undef                                         rel\arm_exc.o
+                                                  rel\bsp.o
+BSP_abort                                         rel\bsp.o
+                                                  rel\arm_exc.o
+BSP_fiq                                           rel\isr.o
+                                                  rel\arm_exc.o
+BSP_init                                          rel\bsp.o
+                                                  rel\blinky.o
+BSP_irq                                           rel\isr.o
+                                                  rel\arm_exc.o
+BSP_led                                           rel\bsp.o
+                                                  rel\blinky.o
+Blinky_ctor                                       rel\blinky.o
+Blinky_dispatch                                   rel\blinky.o
+ISR_pit                                           rel\isr.o
+                                                  rel\bsp.o
+ISR_spur                                          rel\isr.o
+                                                  rel\bsp.o
+ISR_timer0                                        rel\isr.o
+                                                  rel\bsp.o
+_Jv_RegisterClasses                               c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+__abt_stack_top__                                 rel\startup.o
+__bss_end__                                       rel\startup.o
+__bss_start__                                     rel\startup.o
+__c_stack_top__                                   rel\startup.o
+__data_load                                       rel\startup.o
+__data_start                                      rel\startup.o
+__deregister_frame_info                           c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+__dso_handle                                      c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+__fastcode_end                                    rel\startup.o
+__fastcode_load                                   rel\startup.o
+__fastcode_start                                  rel\startup.o
+__fini_array_end                                  c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+__fini_array_start                                c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+__fiq_stack_top__                                 rel\startup.o
+__init_array_end                                  c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+__init_array_start                                c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+__irq_stack_top__                                 rel\startup.o
+__libc_fini_array                                 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+__libc_init_array                                 c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+                                                  rel\startup.o
+__preinit_array_end                               c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+__preinit_array_start                             c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+__ram_start                                       rel\low_level_init.o
+__register_frame_info                             c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crtbegin.o
+__stack_end__                                     rel\startup.o
+__stack_start__                                   rel\startup.o
+__svc_stack_top__                                 rel\startup.o
+__und_stack_top__                                 rel\startup.o
+_edata                                            rel\startup.o
+_fini                                             c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+                                                  c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+_init                                             c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/crti.o
+                                                  c:/tools/codesourcery/arm-eabi/bin/../lib/gcc/arm-none-eabi/4.2.0/../../../../arm-none-eabi/lib\libc.a(lib_a-init.o)
+_start                                            rel\startup.o
+eventFlagCheck                                    rel\isr.o
+                                                  rel\blinky.o
+eventFlagSet                                      rel\isr.o
+low_level_init                                    rel\low_level_init.o
+                                                  rel\startup.o
+main                                              rel\blinky.o
+                                                  rel\startup.o

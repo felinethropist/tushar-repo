@@ -1,0 +1,175 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (AT91SAM7S-EK-dbg), 0x0003 // Tools: 'ARM-GNU'
+Target (AT91SAM7S-EK-rel), 0x0003 // Tools: 'ARM-GNU'
+
+
+
+
+Options 1,0,0  // Target 'AT91SAM7S-EK-dbg'
+ Device (AT91SAM7S64)
+ Vendor (Atmel)
+ Cpu (IRAM(0x200000-0x203FFF) IROM(0x100000-0x10FFFF) CLOCK(20000000) CPUTYPE(ARM7TDMI))
+ FlashUt ()
+ StupF ("STARTUP\Atmel\SAM7.s" ("Atmel AT91SAM7 Startup Code"))
+ FlashDR (UL2ARM(-U44045500 -O15 -S0 -C0 -D00(3F0F0F0F) -L00(4) -FO6 -FD200000 -FC800 -FN1 -FF0AT91SAM7_64 -FS0100000 -FL010000))
+ DevID (3815)
+ Rgf (AT91SAM7S64.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ DBC_IFX ()
+ DBC_CMS ()
+ DBC_AMS ()
+ DBC_LMS ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg (ÿAtmel\SAM7S\)
+ OrgReg (ÿAtmel\SAM7S\)
+ TgStat=8
+ OutDir (.\dbg\)
+ OutName (blinky.elf)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=1
+ LstDir (.\dbg\)
+ HexSel=1
+ MG32K=0
+ TGMORE=0
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ BrunUsr 0 0 <>
+ BrunUsr 1 0 <>
+ SVCSID <>
+ GLFLAGS=1790
+ GCPUTYP (ARM7TDMI)
+ TFlagsA { 0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMARM { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMARAM { 0,0,0,32,0,0,64,0,0 }
+ OCMAROM { 1,0,0,16,0,0,0,1,0 }
+ OCMXRAM { 0,0,0,0,0,0,0,0,0 }
+ ACCFLG { 65,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ACMISC ()
+ ACDEFN ()
+ ACUDEF ()
+ ACINCD ()
+ AASFLG { 4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ AAMISC ()
+ AADEFN ()
+ AAUDEF ()
+ AAINCD ()
+ PropFld { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ ALDFLAG { 21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ALDTADR ()
+ ALDDADR ()
+ ALDBSSR ()
+ ALDICLB ()
+ ALDICDR ()
+ ALDMISC ()
+ ALDSCAT ()
+  OPTDL (SARM.DLL)(-cAT91SAM7S)(DARMATS.DLL)(-p91SAM7S64)(SARM.DLL)()(TARMATS.DLL)(-p91SAM7S64)
+  OPTDBG 48126,2,()()()()()()()()()(.\uvision.ini) (BIN\AGDIRDI.DLL)()()()
+ FLASH1 { 9,0,0,0,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0 }
+ FLASH2 (BIN\AGDIRDI.DLL)
+ FLASH3 ("" ())
+ FLASH4 (.\uvision.ini)
+EndOpt
+
+Options 2,0,0  // Target 'AT91SAM7S-EK-rel'
+ Device (AT91SAM7S64)
+ Vendor (Atmel)
+ Cpu (IRAM(0x200000-0x203FFF) IROM(0x100000-0x10FFFF) CLOCK(20000000) CPUTYPE(ARM7TDMI))
+ FlashUt ()
+ StupF ("STARTUP\Atmel\SAM7.s" ("Atmel AT91SAM7 Startup Code"))
+ FlashDR (UL2ARM(-U44045500 -O15 -S0 -C0 -D00(3F0F0F0F) -L00(4) -FO6 -FD200000 -FC800 -FN1 -FF0AT91SAM7_64 -FS0100000 -FL010000))
+ DevID (3815)
+ Rgf (AT91SAM7S64.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ DBC_IFX ()
+ DBC_CMS ()
+ DBC_AMS ()
+ DBC_LMS ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg (ÿAtmel\SAM7S\)
+ OrgReg (ÿAtmel\SAM7S\)
+ TgStat=16
+ OutDir (.\rel\)
+ OutName (blinky.elf)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=1
+ LstDir (.\)
+ HexSel=1
+ MG32K=0
+ TGMORE=0
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ BrunUsr 0 0 <>
+ BrunUsr 1 0 <>
+ SVCSID <>
+ GLFLAGS=1790
+ GCPUTYP (ARM7TDMI)
+ TFlagsA { 0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMARM { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCMARAM { 0,0,0,32,0,0,64,0,0 }
+ OCMAROM { 1,0,0,16,0,0,0,1,0 }
+ OCMXRAM { 0,0,0,0,0,0,0,0,0 }
+ ACCFLG { 65,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ACMISC ()
+ ACDEFN ()
+ ACUDEF ()
+ ACINCD ()
+ AASFLG { 4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ AAMISC ()
+ AADEFN ()
+ AAUDEF ()
+ AAINCD ()
+ PropFld { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ ALDFLAG { 21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ ALDTADR ()
+ ALDDADR ()
+ ALDBSSR ()
+ ALDICLB ()
+ ALDICDR ()
+ ALDMISC ()
+ ALDSCAT ()
+  OPTDL (SARM.DLL)(-cAT91SAM7S)(DARMATS.DLL)(-p91SAM7S64)(SARM.DLL)()(TARMATS.DLL)(-p91SAM7S64)
+  OPTDBG 48126,2,()()()()()()()()()(.\uvision.ini) (BIN\AGDIRDI.DLL)()()()
+ FLASH1 { 1,0,0,0,1,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0 }
+ FLASH2 (BIN\AGDIRDI.DLL)
+ FLASH3 ("" ())
+ FLASH4 (.\uvision.ini)
+EndOpt
+
