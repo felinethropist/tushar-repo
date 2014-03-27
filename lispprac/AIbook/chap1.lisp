@@ -1,19 +1,19 @@
-(setf p '(john q public))
+;execute this in the repl
+;(setf p '(john q public))
+;(setf names '((john q public) (malcom x)
+;	      (admiral grace murray hopper) (spot)
+;	      (aristotle) (a a milne) (z z top)
+;	      (sir larry oliver) (miss scarlet)))
 
 (defun last-name (name)
   "Select last name from a name represented as a list"
   (first (last name)))
 
-(defun first-name (name)
-  "Select first name from a name represented as a list"
-  (first name))
+;(defun first-name (name)
+;  "Select first name from a name represented as a list"
+;  (first name))
 
-(setf names '((john q public) (malcom x)
-	      (admiral grace murray hopper) (spot)
-	      (aristotle) (a a milne) (z z top)
-	      (sir larry oliver) (miss scarlet)))
-
-(mapcar #'last-name names)
+;(mapcar #'last-name names)
 
 (defparameter *titles*
   '(mr mrs miss ms sir madam dr admiral major general)
